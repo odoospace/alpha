@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_picking_form_autoinvoice" model="ir.ui.view">
+            <field name="name">Auto Invoice Onshipping</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='do_prepare_partial']" position="after">
+                      <button name="generate_invoice" string="Validate invoice" type="object" class="oe_highlight"/>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
