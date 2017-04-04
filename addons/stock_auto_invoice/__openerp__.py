@@ -9,11 +9,11 @@
     "license": "AGPL-3",
     "external_dependencies": {
     },
-    "depends": [
-        "stock",
-    ],
+    "depends": ['stock','account','report'],
     "data": [
         "views/templates.xml",
     ],
     'installable': True,
+    'application': True,
+
 }
