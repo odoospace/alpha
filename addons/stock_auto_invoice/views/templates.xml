@@ -7,9 +7,22 @@
             <field name="inherit_id" ref="stock.view_picking_form" />
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='do_prepare_partial']" position="after">
-                      <button name="generate_invoice" string="Generate/Validate/Print invoice" type="object" class="oe_highlight"/>
+                      <button name="generate_invoice" string="Print invoice" type="object" class="oe_highlight"/>
                  </xpath>
             </field>
         </record>
+
+        <record id="view_order_form_mspayment" model="ir.ui.view">
+            <field name="name">sale.order.form.mspayment</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='277']" position="after">
+                      <button name="open_payment_create" string="Register Payment" type="object" class="btn-primary" attrs="" context="{'payment_type': 'inbound', 'partner_type': partner_id, 'amount': amount_total, 'communication': name}" attrs="{'invisible': [('state', 'in', ('draft','send', 'cancel'))]}"/>
+                 </xpath>
+            </field>
+        </record>
+
+
     </data>
 </openerp>
