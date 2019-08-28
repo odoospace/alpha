@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "external_dependencies": {
     },
-    "depends": ['stock','account','report'],
+    "depends": ['sale','stock','account','report'],
     "data": [
         "views/templates.xml",
     ],

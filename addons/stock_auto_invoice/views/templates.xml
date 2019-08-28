@@ -6,7 +6,7 @@
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form" />
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='do_prepare_partial']" position="after">
+                <xpath expr="//button[@name='action_confirm']" position="after">
                       <button name="generate_invoice" string="Print invoice" type="object" class="oe_highlight"/>
                  </xpath>
             </field>
@@ -18,7 +18,7 @@
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='277']" position="after">
-                      <button name="open_payment_create" string="Register Payment" type="object" class="btn-primary" attrs="" context="{'payment_type': 'inbound', 'partner_type': partner_id, 'amount': amount_total, 'communication': name}" attrs="{'invisible': [('state', 'in', ('draft','send', 'cancel'))]}"/>
+                      <button name="open_payment_create" string="Register Payment" type="object" class="btn-primary" attrs="{'invisible': [('state', 'in', ('draft','send', 'cancel'))]}"/>
                  </xpath>
             </field>
         </record>
